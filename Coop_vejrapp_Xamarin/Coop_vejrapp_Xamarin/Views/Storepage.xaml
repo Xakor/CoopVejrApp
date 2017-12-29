@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cardView="clr-namespace:CardView;assembly=CardView"
+             x:Class="Coop_vejrapp_Xamarin.Views.Storepage"
+             Title="{Binding SelectedStore.Name}"
+             BackgroundColor="WhiteSmoke">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+                <!-- TEMP -->
+                <Label Margin="0, 10, 0, 10" Text="Dette er et midlertidigt layout" FontSize="Large" HorizontalOptions="CenterAndExpand" />
+
+                <!-- DMI Vejret Nu -->
+                <StackLayout  BackgroundColor="White" Margin="20, 20 , 20, 20" Padding="10, 10, 10, 10">
+                    <Label Margin="0, 10, 0, 10" Text="Vejret lige nu!" FontSize="Medium" HorizontalOptions="CenterAndExpand" />
+                    <Label x:Name="BigTemperature" Text="NoTempData°" FontSize="72" />
+                </StackLayout>
+
+                <!-- DMI 5 Døgnsprognose -->
+                <StackLayout Orientation="Horizontal" BackgroundColor="White" Margin="20, 0, 20, 20" Padding="10, 10, 10, 10">
+                    <StackLayout HorizontalOptions="CenterAndExpand"> <!-- Dag 1 -->
+                        <Label Text="MAN" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold" /> <!-- Dagsnavn-->
+                        <Image  BackgroundColor="Red" HeightRequest="84" WidthRequest="84" /> <!-- VejrSymbol -->
+                        <Label Text="10°" HorizontalOptions="Center" FontSize="Medium" /> <!-- Temp -->
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand"> <!-- Dag 2 -->
+                        <Label Text="TIR" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold" /> <!-- Dagsnavn-->
+                        <Image  BackgroundColor="Red" HeightRequest="84" WidthRequest="84"/> <!-- VejrSymbol -->
+                        <Label Text="13°" HorizontalOptions="Center" FontSize="Medium" /> <!-- Temp -->
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand"> <!-- Dag 3 -->
+                        <Label Text="ONS" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold" /> <!-- Dagsnavn-->
+                        <Image  BackgroundColor="Red" HeightRequest="84" WidthRequest="84"/> <!-- VejrSymbol -->
+                        <Label Text="9°" HorizontalOptions="Center" FontSize="Medium" /> <!-- Temp -->
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand"> <!-- Dag 4 -->
+                        <Label Text="TOR" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold" /> <!-- Dagsnavn-->
+                        <Image  BackgroundColor="Red" HeightRequest="84" WidthRequest="84"/> <!-- VejrSymbol -->
+                        <Label Text="9°" HorizontalOptions="Center" FontSize="Medium" /> <!-- Temp -->
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand"> <!-- Dag 5 -->
+                        <Label Text="FRE" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold" /> <!-- Dagsnavn-->
+                        <Image  BackgroundColor="Red" HeightRequest="84" WidthRequest="84"/> <!-- VejrSymbol -->
+                        <Label Text="8°" HorizontalOptions="Center" FontSize="Medium" /> <!-- Temp -->
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- DATA // Needs layout -->
+                <StackLayout x:Name="DataBlok" BackgroundColor="White" Margin="20, 0, 20, 20" Padding="10, 10, 10, 10">
+                    <Label Text="Kardex:" FontAttributes="Bold" FontSize="Large" />
+                    <Label x:Name="kardexLabel" Text="{Binding SelectedStore.Kardex}" FontSize="Medium" />
+                    <Label Text="Kædenavn:" FontAttributes="Bold" FontSize="Large" />
+                    <Label x:Name="retailGroupLabel" Text="{Binding SelectedStore.RetailGroupName}" FontSize="Medium" />
+                    <Label Text="Butiksnavn:" FontAttributes="Bold" FontSize="Large" />
+                    <Label x:Name="nameLabel" Text="{Binding SelectedStore.Name}"  FontSize="Medium" />
+                    <Label Text="Adresse:" FontAttributes="Bold" FontSize="Large" />
+                    <Label x:Name="addressLabel" Text="{Binding SelectedStore.Address}"  FontSize="Medium" />
+                    <Label Text="Postnummer:" FontAttributes="Bold" FontSize="Large" />
+                    <Label x:Name="zipCodeLabel" Text="{Binding SelectedStore.Zipcode}"  FontSize="Medium" />
+                    <Label Text="Bynavn:" FontAttributes="Bold" FontSize="Large" />
+                    <Label x:Name="cityLabel" Text="{Binding SelectedStore.City}"  FontSize="Medium" />
+                    <Label Text="Telefon Nummer:" FontAttributes="Bold" FontSize="Large" />
+                    <Label x:Name="phoneNumberLabel" Text="{Binding SelectedStore.Phonenumber}"  FontSize="Medium" />
+                    <Label Text="Leder:" FontAttributes="Bold" FontSize="Large" />
+                    <Label x:Name="managerLabel" Text="{Binding SelectedStore.Manager}"  FontSize="Medium" />
+                    <Label Text="X-Koordinat:" FontAttributes="Bold" FontSize="Large" />
+                    <Label x:Name="xAxisLabel" Text="{Binding SelectedStore.Location.Coordinates[0]}"  FontSize="Medium" />
+                    <Label Text="Y-Koordinat:" FontAttributes="Bold" FontSize="Large" />
+                    <Label x:Name="yAxisLabel" Text="{Binding SelectedStore.Location.Coordinates[1]}"  FontSize="Medium" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
