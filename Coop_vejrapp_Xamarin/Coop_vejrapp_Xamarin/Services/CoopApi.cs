@@ -23,7 +23,7 @@ namespace Coop_vejrapp_Xamarin.Services
             /*var queryString = WebUtility.UrlDecode(string.Empty);*/
             ObservableCollection<Butik.Datum> temp = ViewModel.ButiksListe.ButiksListe;
 
-            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "/* REDACTED */");
+            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "/* REDACTED, still? */");
             client.DefaultRequestHeaders.Add("host", "api.cl.coop.dk");
             client.DefaultRequestHeaders.Add("Connection", "Keep-Alive");
 
