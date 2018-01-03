@@ -45,7 +45,7 @@ namespace Coop_vejrapp_Xamarin.Services
             var client = new HttpClient();
             var queryString = WebUtility.UrlDecode(string.Empty);
 
-            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "a7a5af54dd7a45778bbae79cf9cd3080");
+            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "/* REDACTED */");
             client.DefaultRequestHeaders.Add("host", "api.cl.coop.dk");
             client.DefaultRequestHeaders.Add("Connection", "Keep-Alive");
 
